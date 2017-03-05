@@ -9,8 +9,8 @@ import { ConferenceApp } from './app.component';
 import { PopoverPage } from '../pages/about-popover/about-popover';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
-import { MapPage } from '../pages/map/map';
-import { SchedulePage } from '../pages/schedule/schedule';
+//import { MapPage } from '../pages/map/map';
+//import { SchedulePage } from '../pages/schedule/schedule';
 import { ScheduleFilterPage } from '../pages/schedule-filter/schedule-filter';
 import { SessionDetailPage } from '../pages/session-detail/session-detail';
 import { SignupPage } from '../pages/signup/signup';
@@ -18,7 +18,7 @@ import { SpeakerDetailPage } from '../pages/speaker-detail/speaker-detail';
 import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
-import { SupportPage } from '../pages/support/support';
+//import { SupportPage } from '../pages/support/support';
 import { ContactPage } from '../pages/contact/contact';
 import { SearchPage } from '../pages/search/search';
 
@@ -32,9 +32,9 @@ import { UserData } from '../providers/user-data';
     //AboutPage,
     AccountPage,
     LoginPage,
-    MapPage,
+    //MapPage,
     PopoverPage,
-    SchedulePage,
+    //SchedulePage,
     ScheduleFilterPage,
     SessionDetailPage,
     SignupPage,
@@ -42,7 +42,7 @@ import { UserData } from '../providers/user-data';
     SpeakerListPage,
     TabsPage,
     TutorialPage,
-    SupportPage,
+    //SupportPage,
     ContactPage,
     SearchPage,
   ],
@@ -55,9 +55,9 @@ import { UserData } from '../providers/user-data';
     //AboutPage,
     AccountPage,
     LoginPage,
-    MapPage,
+    //MapPage,
     PopoverPage,
-    SchedulePage,
+    //SchedulePage,
     ScheduleFilterPage,
     SessionDetailPage,
     SignupPage,
@@ -65,7 +65,7 @@ import { UserData } from '../providers/user-data';
     SpeakerListPage,
     TabsPage,
     TutorialPage,
-    SupportPage,
+    //SupportPage,
     ContactPage,
     SearchPage
   ],
