@@ -6,7 +6,7 @@ import { AboutPage } from '../about/about';
 import { MapPage } from '../map/map';
 import { LoginPage } from '../login/login';
 import { SpeakerListPage } from '../speaker-list/speaker-list';
-
+import { AdminPage } from '../admin/admin';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -14,8 +14,8 @@ import { SpeakerListPage } from '../speaker-list/speaker-list';
 export class TabsPage {
   // set the root pages for each tab
   tab1Root: any = LoginPage;
-  tab2Root: any = SpeakerListPage;
-  tab3Root: any = MapPage;
+  //tab2Root: any = SpeakerListPage;
+  tab3Root: any = AdminPage;
   tab4Root: any = AboutPage;
   mySelectedIndex: number;
 

@@ -18,9 +18,11 @@ import { SpeakerDetailPage } from '../pages/speaker-detail/speaker-detail';
 import { SpeakerListPage } from '../pages/speaker-list/speaker-list';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
-import { SupportPage } from '../pages/support/support';
+//import { SupportPage } from '../pages/support/support';
 import { ContactPage } from '../pages/contact/contact';
 import { SearchPage } from '../pages/search/search';
+import { AdminPage } from '../pages/admin/admin';
+import { HomePage } from '../pages/home/home';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
@@ -42,9 +44,11 @@ import { UserData } from '../providers/user-data';
     SpeakerListPage,
     TabsPage,
     TutorialPage,
-    SupportPage,
+    //SupportPage,
     ContactPage,
     SearchPage,
+    AdminPage,
+    HomePage,
   ],
   imports: [
     IonicModule.forRoot(ConferenceApp)
@@ -65,9 +69,12 @@ import { UserData } from '../providers/user-data';
     SpeakerListPage,
     TabsPage,
     TutorialPage,
-    SupportPage,
+    //SupportPage,
     ContactPage,
-    SearchPage
+    SearchPage,
+    AdminPage,
+    HomePage
+
   ],
   providers: [ConferenceData, UserData, Storage]
 })
