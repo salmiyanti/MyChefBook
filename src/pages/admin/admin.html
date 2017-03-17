@@ -7,12 +7,38 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>admin</ion-title>
+  <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Admin</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+<h4>Tambah menu baru</h4>
+<ion-list>
+
+  <ion-item>
+    <ion-input type="text" placeholder="Nama resepi"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text" placeholder="Keyword"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text" placeholder="Bahan-bahan"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text" placeholder="Cara memasak"></ion-input>
+  </ion-item>
+
+  </ion-list>
+
+  <button ion-button>Simpan</button>
+
 
 </ion-content>

@@ -19,7 +19,15 @@
 
 <h2>Sila Masukkan Resipi :</h2>
 <br>
-<ion-list>
+<p>Bahan pertama:</p>
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+<p>Bahan kedua:</p>
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+<p>Bahan ketiga:</p>
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+<!--<ion-list>
 
   <ion-item>
     <ion-input type="text" placeholder="Bahan Pertama"></ion-input>
@@ -33,7 +41,7 @@
     <ion-input type="text" placeholder="Bahan Ketiga"></ion-input>
   </ion-item>
 
-</ion-list>
+</ion-list>-->
 <button ion-button>Jom Masak !</button>
 
 </ion-content>
