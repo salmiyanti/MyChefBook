@@ -18,6 +18,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { SearchPage } from '../pages/search/search';
 import { AdminPage } from '../pages/admin/admin';
 import { HomePage } from '../pages/home/home';
+import { AdminloginPage } from '../pages/adminlogin/adminlogin';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
@@ -44,7 +45,7 @@ export class ConferenceApp {
   // the login page disables the left menu
   appPages: PageInterface[] = [
     //{ title: 'Schedule', component: TabsPage, tabComponent: SchedulePage, icon: 'calendar' },
-    { title: 'Speakers', component: TabsPage, tabComponent: SpeakerListPage, index: 1, icon: 'contacts' }
+    { title: 'Admin', component: TabsPage, tabComponent: AdminloginPage, index: 1, icon: 'contacts' }
     //{ title: 'Map', component: TabsPage, tabComponent: MapPage, index: 2, icon: 'map' }
     //{ title: 'About', component: TabsPage, tabComponent: AboutPage, index: 3, icon: 'information-circle' }
   ];
@@ -56,10 +57,10 @@ export class ConferenceApp {
   ];
   loggedOutPages: PageInterface[] = [
     { title: 'Log Masuk', component: LoginPage, icon: 'log-in' },
-    { title: 'Contact', component: ContactPage, icon: 'person' },
+    //{ title: 'Contact', component: ContactPage, icon: 'person' },
     //{ title: 'Support', component: SupportPage, icon: 'help' },
-    { title: 'Admin', component: AdminPage, icon: 'md-contact' },
-    { title: 'Signup', component: SignupPage, icon: 'person-add' }
+    //{ title: 'Admin', component: AdminPage, icon: 'md-contact' },
+    { title: 'Daftar Masuk', component: SignupPage, icon: 'person-add' }
   ];
   rootPage: any;
 

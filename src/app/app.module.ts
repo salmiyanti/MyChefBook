@@ -23,6 +23,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { SearchPage } from '../pages/search/search';
 import { AdminPage } from '../pages/admin/admin';
 import { HomePage } from '../pages/home/home';
+import { AdminloginPage } from '../pages/adminlogin/adminlogin';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
@@ -49,6 +50,8 @@ import { UserData } from '../providers/user-data';
     SearchPage,
     AdminPage,
     HomePage,
+    AdminloginPage,
+
   ],
   imports: [
     IonicModule.forRoot(ConferenceApp)
@@ -73,6 +76,7 @@ import { UserData } from '../providers/user-data';
     ContactPage,
     SearchPage,
     AdminPage,
+    AdminloginPage,
     HomePage
 
   ],
