@@ -45,15 +45,15 @@ export class ConferenceApp {
   // the login page disables the left menu
   appPages: PageInterface[] = [
     //{ title: 'Schedule', component: TabsPage, tabComponent: SchedulePage, icon: 'calendar' },
-    { title: 'Admin', component: TabsPage, tabComponent: AdminloginPage, index: 1, icon: 'contacts' }
+    { title: 'Pentadbir', component: TabsPage, tabComponent: AdminloginPage, index: 1, icon: 'contacts' }
     //{ title: 'Map', component: TabsPage, tabComponent: MapPage, index: 2, icon: 'map' }
     //{ title: 'About', component: TabsPage, tabComponent: AboutPage, index: 3, icon: 'information-circle' }
   ];
   loggedInPages: PageInterface[] = [
-    { title: 'Account', component: AccountPage, icon: 'person' },
+    { title: 'Akaun Pengguna', component: AccountPage, icon: 'person' },
     { title: 'Cari Resipi', component: SearchPage, icon: 'search' },
     //{ title: 'Support', component: SupportPage, icon: 'help' },
-    { title: 'Logout', component: TabsPage, icon: 'log-out', logsOut: true }
+    { title: 'Log Keluar', component: TabsPage, icon: 'log-out', logsOut: true }
   ];
   loggedOutPages: PageInterface[] = [
     { title: 'Log Masuk', component: LoginPage, icon: 'log-in' },
