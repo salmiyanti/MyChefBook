@@ -11,13 +11,9 @@ export class GlobalService {
   datePipeMy:DatePipe = new DatePipe('en-US');
   backend:any = {
     protocol: "https://",
-    // baseUrl: "localhost:8000",
-    baseUrl: "mexists:8238Gt@walm.cryptical.tech",
-    loginUrl: "/json/login",
-    getCurrentUserUrl: '/json/get-current-user',
-    updateGcmIdUrl: '/push/{{id}}',
-    getPushDataUrl: '/push/get',
-    getAvatarUrl: '/public/get-avatar'
+    baseUrl: "mychefbook.cryptical.tech",
+    loginUrl: "/login.php",
+    getIngredientUrl: '/ingredient.php',
   };
   public measurementUnit = 'Meters';
 
@@ -26,10 +22,7 @@ export class GlobalService {
               public modalCtrl:ModalController) {
     this.backend.baseUrl = this.backend.protocol + this.backend.baseUrl;
     this.backend.loginUrl = this.backend.baseUrl + this.backend.loginUrl;
-    this.backend.getCurrentUserUrl = this.backend.baseUrl + this.backend.getCurrentUserUrl;
-    this.backend.updateGcmIdUrl = this.backend.baseUrl + this.backend.updateGcmIdUrl;
-    this.backend.getPushDataUrl = this.backend.baseUrl + this.backend.getPushDataUrl;
-    this.backend.getAvatarUrl = this.backend.baseUrl + this.backend.getAvatarUrl;
+    this.backend.getIngredientUrl = this.backend.baseUrl + this.backend.getIngredientUrl;
   }
 
   getStorage(key:string) {

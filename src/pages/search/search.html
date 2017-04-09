@@ -16,32 +16,46 @@
 
 <ion-content padding>
 
+  <form #searchForm="ngForm" novalidate>
+    <ion-list no-lines>
+      <h2>Sila Masukkan Bahan-bahan :</h2>
 
-  <h2>Sila Masukkan Resipi :</h2>
-  <br>
-  <p>Bahan pertama:</p>
-  <ion-input [(ngModel)]="ingredient.first" name="first" type="text" #first="ngModel"></ion-input>
+      <ion-item>
+        <ion-label stacked color="primary">Bahan pertama:</ion-label>
+        <ion-input [(ngModel)]="ingredient.first" name="first" type="text" #first="ngModel" spellcheck="false"
+                   autocapitalize="off"
+                   required>
+        </ion-input>
+      </ion-item>
 
-  <p>Bahan kedua:</p>
-  <ion-input [(ngModel)]="ingredient.second" name="second" type="text" #second="ngModel"></ion-input>
+      <ion-item>
+        <ion-label stacked color="primary">Bahan kedua:</ion-label>
+        <ion-input [(ngModel)]="ingredient.second" name="second" type="text" #second="ngModel" required>
+        </ion-input>
+      </ion-item>
 
-  <p>Bahan ketiga:</p>
-  <ion-input [(ngModel)]="ingredient.third" name="third" type="text" #third="ngModel"></ion-input>
-  <!--<ion-list>
+      <ion-item>
+        <ion-label stacked color="primary">Bahan ketiga:</ion-label>
+        <ion-input [(ngModel)]="ingredient.third" name="third" type="text" #third="ngModel" required>
+        </ion-input>
+      </ion-item>
+    </ion-list>
 
-    <ion-item>
-      <ion-input type="text" placeholder="Bahan Pertama"></ion-input>
+    <ion-row responsive-sm>
+      <ion-col>
+        <button ion-button (click)="onSearch(searchForm)" color="danger" type="submit" block>Jom Masak!</button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+  <ion-item-divider ion-item light no-lines style="font-size: 1.4rem">
+    Results
+    <ion-icon item-right name="search"></ion-icon>
+  </ion-item-divider>
+
+  <ion-list>
+    <ion-item *ngFor="let item of recipes">
+      {{item.name}}
     </ion-item>
-
-    <ion-item>
-      <ion-input type="text" placeholder="Bahan Kedua"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-input type="text" placeholder="Bahan Ketiga"></ion-input>
-    </ion-item>
-
-  </ion-list>-->
-  <button ion-button (click)="search()">Jom Masak !</button>
-
+  </ion-list>
 </ion-content>
