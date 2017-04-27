@@ -56,7 +56,7 @@
 
     <ion-list>
       <ion-list-header>
-        Navigate
+        Navigasi
       </ion-list-header>
       <button ion-item menuClose *ngFor="let p of appPages" (click)="openPage(p)">
         <ion-icon item-left [name]="p.icon" [color]="isActive(p)"></ion-icon>
@@ -66,7 +66,7 @@
 
     <ion-list>
       <ion-list-header>
-        Account
+        Akaun
       </ion-list-header>
       <button ion-item menuClose *ngFor="let p of loggedInPages" (click)="openPage(p)">
         <ion-icon item-left [name]="p.icon" [color]="isActive(p)"></ion-icon>
@@ -80,7 +80,7 @@
       </ion-list-header>
       <button ion-item menuClose (click)="openTutorial()">
         <ion-icon item-left name="hammer"></ion-icon>
-        Welcome
+        Selamat Datang
       </button>
     </ion-list>
 

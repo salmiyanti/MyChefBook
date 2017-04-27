@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {NgForm} from "@angular/forms";
+import {AdminPage} from "../admin/admin";
 
 /*
   Generated class for the Adminlogin page.
@@ -12,6 +14,8 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'adminlogin.html'
 })
 export class AdminloginPage {
+  login: {username?: string, password?: string} = {};
+  submitted = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
@@ -19,4 +23,7 @@ export class AdminloginPage {
     console.log('ionViewDidLoad AdminloginPage');
   }
 
+  onLogin(form:NgForm){
+    this.navCtrl.push(AdminPage);
+  }
 }

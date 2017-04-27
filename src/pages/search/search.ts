@@ -14,11 +14,12 @@ import {GlobalService} from "../../providers/global-service";
 })
 export class SearchPage {
 
+  recipe:string;
   ingredient:{first?:string, second?:string, third?:string};
   recipes:any = [];
 
   constructor(public ingredientService:IngredientService, public globalService:GlobalService, public navCtrl:NavController, public navParams:NavParams) {
-    this.ingredient = {first: 'Ikan Pari', second: 'Bunga Kantan', third: 'Cili Kering'};
+    this.ingredient = {first: '', second: '', third: ''};
   }
 
   ionViewDidLoad() {
@@ -30,7 +31,7 @@ export class SearchPage {
     loading.present();
 
     this.ingredientService.getIngredient(this.ingredient).subscribe((data:any) => {
-      // console.log(data);
+      console.log(data);
       this.recipes = data;
       data.forEach((recipe:any, val:any)=> {
         console.log(recipe.name);

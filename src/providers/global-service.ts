@@ -14,6 +14,8 @@ export class GlobalService {
     baseUrl: "mychefbook.cryptical.tech",
     loginUrl: "/login.php",
     getIngredientUrl: '/ingredient.php',
+    getRecipeUrl: '/recipe.php',
+    
   };
   public measurementUnit = 'Meters';
 
@@ -23,6 +25,7 @@ export class GlobalService {
     this.backend.baseUrl = this.backend.protocol + this.backend.baseUrl;
     this.backend.loginUrl = this.backend.baseUrl + this.backend.loginUrl;
     this.backend.getIngredientUrl = this.backend.baseUrl + this.backend.getIngredientUrl;
+    this.backend.getRecipeUrl = this.backend.baseUrl + this.backend.getRecipeUrl;
   }
 
   getStorage(key:string) {
