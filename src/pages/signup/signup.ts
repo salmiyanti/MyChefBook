@@ -18,7 +18,7 @@ export class SignupPage {
   submitted = false;
   //users:any = [];
 
-  constructor(public globalService:GlobalService, public navCtrl: NavController, public userData: UserData) {}
+  constructor(public navCtrl: NavController, public userData: UserData, public globalService:GlobalService) {}
 
   onSignup(form: NgForm) {
     this.submitted = true;

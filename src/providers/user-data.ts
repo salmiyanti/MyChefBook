@@ -42,8 +42,8 @@ export class UserData {
     this.storage.set(this.REMEMBER_ME, true);
     // this.setUsername(username);
     /*this.setPhone(phone);
-     this.setPassword(password);*/
-    this.events.publish('user:login');
+     this.setPassword(password);
+    this.events.publish('user:login');*/
   }
 
   refreshUserData() {
@@ -87,11 +87,12 @@ export class UserData {
     });
   }
 
-  getUsername() {
+  /* getUsername() {
     return this.storage.get(this.USER_DATA).then((data)=> {
       return data.username;
     });
-  }
+  }*/
+
 
   getPhoneNumber() {
     return this.storage.get(this.USER_DATA).then((data)=> {
@@ -142,11 +143,11 @@ export class UserData {
     this.storage.set('username', username);
   };
 
-/*  getUsername() {
+  getUsername() {
     return this.storage.get('username').then((value) => {
       return value;
     });
-  };*/
+  };
 
   // return a promise
   hasLoggedIn() {

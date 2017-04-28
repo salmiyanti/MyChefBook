@@ -5,12 +5,13 @@ import {Http} from '@angular/http';
 import {LoadingController, AlertController, ToastController, ModalController} from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import {ModalPage} from "../pages/modal/modal";
-import {UserData} from "./user-data";
+//import {UserData} from "./user-data";
 import {Observable} from "rxjs/Rx";
 
 
 @Injectable()
 export class GlobalService {
+
   datePipeMy:DatePipe = new DatePipe('en-US');
   backend:any = {
     protocol: "https://",
@@ -25,7 +26,7 @@ export class GlobalService {
 
   constructor(public storage:Storage, public http:Http, private alertCtrl:AlertController,
               public toastCtrl:ToastController, public loadingCtrl:LoadingController,
-              public modalCtrl:ModalController, public userData:UserData) {
+              public modalCtrl:ModalController /*public userData:UserData*/) {
     this.backend.baseUrl = this.backend.protocol + this.backend.baseUrl;
     this.backend.loginUrl = this.backend.baseUrl + this.backend.loginUrl;
     this.backend.getIngredientUrl = this.backend.baseUrl + this.backend.getIngredientUrl;
@@ -83,8 +84,8 @@ export class GlobalService {
     });
 }
 
-login(login:any){
-  // console.log(login);
+  login(login:any){
+  //console.log(login);
   return Observable.create((observer:any) => {
     // At this point make a request to your backend to make a real check!
     var requestData = ({
@@ -115,8 +116,11 @@ login(login:any){
     });
   }
 
-  modal(component:any, params:any) {
+ /* modal(component:any, params:any) {
     return this.modalCtrl.create(component, params);
+  }*/
+  modal(data:any, title:any = ''){
+    return this.modalCtrl.create(ModalPage, {title: title, data: data});
   }
 
   getDateFromFormat(format:string = 'd MMM y', date:Date = new Date()):string {
