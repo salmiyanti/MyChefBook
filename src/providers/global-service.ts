@@ -5,6 +5,9 @@ import {Http} from '@angular/http';
 import {LoadingController, AlertController, ToastController, ModalController} from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import {ModalPage} from "../pages/modal/modal";
+import {UserData} from "./user-data";
+import {Observable} from "rxjs/Rx";
+
 
 @Injectable()
 export class GlobalService {
@@ -15,17 +18,19 @@ export class GlobalService {
     loginUrl: "/login.php",
     getIngredientUrl: '/ingredient.php',
     getRecipeUrl: '/recipe.php',
-    
+    //registerUrl: '/register.php', untuk signup
+
   };
   public measurementUnit = 'Meters';
 
   constructor(public storage:Storage, public http:Http, private alertCtrl:AlertController,
               public toastCtrl:ToastController, public loadingCtrl:LoadingController,
-              public modalCtrl:ModalController) {
+              public modalCtrl:ModalController, public userData:UserData) {
     this.backend.baseUrl = this.backend.protocol + this.backend.baseUrl;
     this.backend.loginUrl = this.backend.baseUrl + this.backend.loginUrl;
     this.backend.getIngredientUrl = this.backend.baseUrl + this.backend.getIngredientUrl;
     this.backend.getRecipeUrl = this.backend.baseUrl + this.backend.getRecipeUrl;
+    //this.backend.registerUrl = this.backend.baseUrl + this.backend.registerUrl;
   }
 
   getStorage(key:string) {
@@ -53,6 +58,53 @@ export class GlobalService {
       dismissOnPageChange: true
     });
   }
+
+  signup(signup:any){
+  // console.log(login);
+    return Observable.create((observer:any) => {
+      // At this point make a request to your backend to make a real check!
+      var requestData = ({
+        username: signup.username,
+        password: signup.password,
+        email: "yanti@email.com",
+      });
+    // let headers = new Headers({'Content-Type': 'application/json'});
+    // let options = new RequestOptions({headers: headers});
+      this.http.post("https://mychefbook.cryptical.tech/register.php", requestData/*, options*/)
+        .subscribe((responseData:any) => {
+          console.log(responseData);
+          observer.next(responseData.json());
+          observer.complete();
+        }, (error:any) => {
+          observer.next(error);
+          observer.complete();
+          console.log(error);
+        });
+    });
+}
+
+login(login:any){
+  // console.log(login);
+  return Observable.create((observer:any) => {
+    // At this point make a request to your backend to make a real check!
+    var requestData = ({
+      username: login.username,
+      password: login.password,
+    });
+    // let headers = new Headers({'Content-Type': 'application/json'});
+    // let options = new RequestOptions({headers: headers});
+    this.http.post("https://mychefbook.cryptical.tech/login.php", requestData/*, options*/)
+      .subscribe((responseData:any) => {
+        console.log(responseData);
+        observer.next(responseData.json());
+        observer.complete();
+      }, (error:any) => {
+        observer.next(error);
+        observer.complete();
+        console.log(error);
+      });
+  });
+}
 
   alert(title:string, subTitle:string, message?:string, buttons:any = ['Ok']) {
     return this.alertCtrl.create({
