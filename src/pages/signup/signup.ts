@@ -3,8 +3,7 @@ import { NgForm } from '@angular/forms';
 
 import { NavController } from 'ionic-angular';
 
-
-import { TabsPage } from '../tabs/tabs';
+//import { TabsPage } from '../tabs/tabs';
 import { UserData } from '../../providers/user-data';
 import {GlobalService} from "../../providers/global-service";
 import {LoginPage} from "../login/login";
@@ -15,7 +14,7 @@ import {LoginPage} from "../login/login";
 })
 export class SignupPage {
   signup: {username?: string, password?: string} = {};
-  submitted = false;
+  submitted = true;
   //users:any = [];
 
   constructor(public navCtrl: NavController, public userData: UserData, public globalService:GlobalService) {}
@@ -25,7 +24,7 @@ export class SignupPage {
 
     if (form.valid) {
       this.globalService.signup(this.signup).subscribe((data:any)=>{
-        alert("Hi " + data.name);
+        alert("Welcome " + data.username);
         this.navCtrl.push(LoginPage);
       }, (error:any)=>{
 

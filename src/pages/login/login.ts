@@ -4,9 +4,11 @@ import { NgForm } from '@angular/forms';
 import { NavController } from 'ionic-angular';
 
 import { SignupPage } from '../signup/signup';
-import { TabsPage } from '../tabs/tabs';
+//import { TabsPage } from '../tabs/tabs';
+import { SearchPage } from '../search/search';
 import { UserData } from '../../providers/user-data';
 import {GlobalService} from '../../providers/global-service';
+
 
 @Component({
   selector: 'page-user',
@@ -14,7 +16,8 @@ import {GlobalService} from '../../providers/global-service';
 })
 export class LoginPage {
   login: {username?: string, password?: string} = {};
-  submitted = false;
+  submitted = true;
+  private data:any;
 
   constructor(public navCtrl: NavController, public userData: UserData, public globalService:GlobalService) { }
 
@@ -23,11 +26,15 @@ export class LoginPage {
 
     if (form.valid) {
       this.globalService.login(this.login).subscribe((data:any)=>{
-        alert("Hi " + data.name);
-        //this.userData.setId(data.id);
-        this.userData.login(data);
-        this.navCtrl.push(TabsPage);
-      }, (error:any)=>{
+        if(data.hasOwnProperty('username')){
+          alert("Hi " + data.username);
+          //this.userData.setId(data.id);
+          this.userData.login(data);
+          this.navCtrl.push(SearchPage);
+        }else
+          alert("User not found");
+       },
+       (error:any)=>{
 
       });
     }

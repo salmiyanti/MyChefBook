@@ -53,9 +53,14 @@
     <ion-icon item-right name="search"></ion-icon>
   </ion-item-divider>
 
-  <ion-list>
+  <ion-list *ngIf="recipes.length > 0">
     <ion-item *ngFor="let item of recipes">
-      <button>{{item.name}}</button>
+      <button ion-button large>{{item.name}}</button>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="recipes.length < 1">
+    <ion-item>
+      No Recepies Found
     </ion-item>
   </ion-list>
 </ion-content>

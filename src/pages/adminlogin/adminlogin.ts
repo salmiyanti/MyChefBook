@@ -1,29 +1,47 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import {NgForm} from "@angular/forms";
-import {AdminPage} from "../admin/admin";
+import { NgForm } from '@angular/forms';
 
-/*
-  Generated class for the Adminlogin page.
+import { NavController } from 'ionic-angular';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+//import { SignupPage } from '../signup/signup';
+//import { TabsPage } from '../tabs/tabs';
+//import { SearchPage } from '../search/search';
+import { AdminPage } from '../admin/admin';
+import { UserData } from '../../providers/user-data';
+import {GlobalService} from '../../providers/global-service';
+
+
 @Component({
-  selector: 'page-adminlogin',
+  selector: 'page-user',
   templateUrl: 'adminlogin.html'
 })
 export class AdminloginPage {
   login: {username?: string, password?: string} = {};
-  submitted = false;
+  submitted = true;
+  private data:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public userData: UserData, public globalService:GlobalService) { }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AdminloginPage');
+  onLogin(form: NgForm) {
+    this.submitted = true;
+
+    if (form.valid) {
+      this.globalService.login(this.login).subscribe((data:any)=>{
+          if(data.hasOwnProperty('username')){
+            alert("Hi " + data.username);
+            //this.userData.setId(data.id);
+            this.userData.login(data);
+            this.navCtrl.push(AdminPage);
+          }else
+            alert("User not found");
+        },
+        (error:any)=>{
+
+        });
+    }
   }
 
-  onLogin(form:NgForm){
-    this.navCtrl.push(AdminPage);
-  }
+  /*onSignup() {
+    this.navCtrl.push(SignupPage);
+  }*/
 }

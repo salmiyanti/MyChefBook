@@ -27,7 +27,7 @@ export class SearchPage {
   }
 
   onSearch() {
-    let loading = this.globalService.loading("Searching...");
+    let loading = this.globalService.loading("Cari resepi...");
     loading.present();
 
     this.ingredientService.getIngredient(this.ingredient).subscribe((data:any) => {
