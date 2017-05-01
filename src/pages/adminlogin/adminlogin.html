@@ -24,19 +24,19 @@
 		<ion-list no-lines>
 			<ion-item>
 
-				<ion-label stacked color="primary">Nama Pengguna</ion-label>
+				<ion-label stacked color="primary">ID Pentadbir</ion-label>
 
-				<ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
+				<ion-input [(ngModel)]="adminlogin.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
 					required>
 				</ion-input>
 			</ion-item>
 			<p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
-				*Nama pengguna perlu dimasukkan
+				*ID Pentadbir perlu dimasukkan
 			</p>
 
 			<ion-item>
 				<ion-label stacked color="primary">Kata Laluan</ion-label>
-				<ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required>
+				<ion-input [(ngModel)]="adminlogin.password" name="password" type="password" #password="ngModel" required>
 				</ion-input>
 			</ion-item>
 			<p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>

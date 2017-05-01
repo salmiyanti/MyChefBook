@@ -19,6 +19,7 @@ export class GlobalService {
     loginUrl: "/login.php",
     getIngredientUrl: '/ingredient.php',
     getRecipeUrl: '/recipe.php',
+    adminloginUrl: "/adminlogin.php",
     //registerUrl: '/register.php', untuk signup
 
   };
@@ -29,6 +30,7 @@ export class GlobalService {
               public modalCtrl:ModalController /*public userData:UserData*/) {
     this.backend.baseUrl = this.backend.protocol + this.backend.baseUrl;
     this.backend.loginUrl = this.backend.baseUrl + this.backend.loginUrl;
+    this.backend.adminloginUrl = this.backend.baseUrl + this.backend.adminloginUrl;
     this.backend.getIngredientUrl = this.backend.baseUrl + this.backend.getIngredientUrl;
     this.backend.getRecipeUrl = this.backend.baseUrl + this.backend.getRecipeUrl;
     //this.backend.registerUrl = this.backend.baseUrl + this.backend.registerUrl;
@@ -67,7 +69,7 @@ export class GlobalService {
       var requestData = ({
         username: signup.username,
         password: signup.password,
-        email: "yanti@email.com",
+        //email: "yanti@email.com",
       });
     // let headers = new Headers({'Content-Type': 'application/json'});
     // let options = new RequestOptions({headers: headers});
@@ -107,7 +109,30 @@ export class GlobalService {
   });
 }
 
-  alert(title:string, subTitle:string, message?:string, buttons:any = ['Ok']) {
+  adminlogin(adminlogin:any){
+    //console.log(login);
+    return Observable.create((observer:any) => {
+      // At this point make a request to your backend to make a real check!
+      var requestData = ({
+        username: adminlogin.username,
+        password: adminlogin.password,
+      });
+      // let headers = new Headers({'Content-Type': 'application/json'});
+      // let options = new RequestOptions({headers: headers});
+      this.http.post("https://mychefbook.cryptical.tech/adminlogin.php", requestData/*, options*/)
+        .subscribe((responseData:any) => {
+          console.log(responseData);
+          observer.next(responseData.json());
+          observer.complete();
+        }, (error:any) => {
+          observer.next(error);
+          observer.complete();
+          console.log(error);
+        });
+    });
+  }
+
+  alert(title:string, subTitle:string, message?:string, buttons:any = ['OK']) {
     return this.alertCtrl.create({
       title: title,
       subTitle: subTitle,

@@ -126,11 +126,18 @@ export class UserData {
     this.events.publish('user:login');
   };
 
+  adminlogin(username:string) {
+    this.storage.set(this.HAS_LOGGED_IN, true);
+    this.setUsername(username);
+    this.events.publish('user:adminlogin');
+  };
+
+
 
   signup(username:string) {
     this.storage.set(this.HAS_LOGGED_IN, true);
     this.setUsername(username);
-    this.events.publish('user:signup');
+    this.events.publish('adminuser:signup');
   };
 
   logout() {

@@ -27,12 +27,12 @@ export class LoginPage {
     if (form.valid) {
       this.globalService.login(this.login).subscribe((data:any)=>{
         if(data.hasOwnProperty('username')){
-          alert("Hi " + data.username);
+          alert("Tahniah " + data.username + ". Log masuk berjaya. Sila klik OK.");
           //this.userData.setId(data.id);
           this.userData.login(data);
           this.navCtrl.push(SearchPage);
         }else
-          alert("User not found");
+          alert("Ralat! Sila masukkan semula data.");
        },
        (error:any)=>{
 

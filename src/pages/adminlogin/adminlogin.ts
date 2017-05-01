@@ -16,7 +16,7 @@ import {GlobalService} from '../../providers/global-service';
   templateUrl: 'adminlogin.html'
 })
 export class AdminloginPage {
-  login: {username?: string, password?: string} = {};
+  adminlogin: {username?: string, password?: string} = {};
   submitted = true;
   private data:any;
 
@@ -26,14 +26,14 @@ export class AdminloginPage {
     this.submitted = true;
 
     if (form.valid) {
-      this.globalService.login(this.login).subscribe((data:any)=>{
+      this.globalService.adminlogin(this.adminlogin).subscribe((data:any)=>{
           if(data.hasOwnProperty('username')){
-            alert("Hi " + data.username);
+            alert("Hello " + data.username);
             //this.userData.setId(data.id);
-            this.userData.login(data);
+            this.userData.adminlogin(data);
             this.navCtrl.push(AdminPage);
           }else
-            alert("User not found");
+            alert("Ralat! Sila masukkan semula data admin.");
         },
         (error:any)=>{
 

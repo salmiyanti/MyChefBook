@@ -23,20 +23,22 @@
       <ion-item>
         <ion-label stacked color="primary">Bahan pertama:</ion-label>
         <ion-input [(ngModel)]="ingredient.first" name="first" type="text" #first="ngModel" spellcheck="false"
-                   autocapitalize="off"
+                   autocapitalize="on"
                    required>
         </ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label stacked color="primary">Bahan kedua:</ion-label>
-        <ion-input [(ngModel)]="ingredient.second" name="second" type="text" #second="ngModel" required>
+        <ion-input [(ngModel)]="ingredient.second" name="second" type="text" #second="ngModel" spellcheck="false"
+                   autocapitalize="on" required>
         </ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label stacked color="primary">Bahan ketiga:</ion-label>
-        <ion-input [(ngModel)]="ingredient.third" name="third" type="text" #third="ngModel" required>
+        <ion-input [(ngModel)]="ingredient.third" name="third" type="text" #third="ngModel" spellcheck="false"
+                   autocapitalize="on" required>
         </ion-input>
       </ion-item>
     </ion-list>
@@ -48,19 +50,21 @@
     </ion-row>
   </form>
 
-  <ion-item-divider ion-item light no-lines style="font-size: 1.4rem">
+ <!--<ion-item-divider ion-item light no-lines style="font-size: 1.4rem">
     Results
     <ion-icon item-right name="search"></ion-icon>
-  </ion-item-divider>
+  </ion-item-divider>-->
 
   <ion-list *ngIf="recipes.length > 0">
     <ion-item *ngFor="let item of recipes">
-      <button ion-button large>{{item.name}}</button>
+      <button ion-button>{{item.name}}</button>
+
     </ion-item>
   </ion-list>
+
   <ion-list *ngIf="recipes.length < 1">
     <ion-item>
-      No Recepies Found
+      Maaf. Tiada resepi.
     </ion-item>
   </ion-list>
 </ion-content>

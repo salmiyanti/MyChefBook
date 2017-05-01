@@ -24,7 +24,7 @@ export class SignupPage {
 
     if (form.valid) {
       this.globalService.signup(this.signup).subscribe((data:any)=>{
-        alert("Welcome " + data.username);
+        alert("Terima Kasih " + data.username + ". Sila log masuk untuk mencari resepi.");
         this.navCtrl.push(LoginPage);
       }, (error:any)=>{
 
