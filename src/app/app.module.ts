@@ -10,6 +10,7 @@ import { ConferenceApp } from './app.component';
 import { PopoverPage } from '../pages/about-popover/about-popover';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
+import { MasakanPage } from '../pages/masakan/masakan';
 //import { MapPage } from '../pages/map/map';
 import { SchedulePage } from '../pages/schedule/schedule';
 import { ScheduleFilterPage } from '../pages/schedule-filter/schedule-filter';
@@ -58,6 +59,8 @@ import {IngredientService} from "../providers/ingredient-service";
     AdminPage,
     HomePage,
     AdminloginPage,
+    MasakanPage,
+
 
   ],
   imports: [
@@ -84,6 +87,7 @@ import {IngredientService} from "../providers/ingredient-service";
     SearchPage,
     AdminPage,
     AdminloginPage,
+    MasakanPage,
     HomePage
 
   ],

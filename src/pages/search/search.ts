@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {IngredientService} from '../../providers/ingredient-service'
 import {GlobalService} from "../../providers/global-service";
+import  {MasakanPage} from "../../pages/masakan/masakan";
 /*
  Generated class for the Search page.
 
@@ -26,6 +27,8 @@ export class SearchPage {
     console.log('ionViewDidLoad SearchPage');
   }
 
+
+
   onSearch() {
     let loading = this.globalService.loading("Cari resepi...");
     loading.present();
@@ -40,6 +43,12 @@ export class SearchPage {
     });
 
     loading.dismiss();
+  }
+
+  onMasakan(item: any) {
+    
+    this.navCtrl.push(MasakanPage, item);
+
   }
 
 }

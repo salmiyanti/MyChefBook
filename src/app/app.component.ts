@@ -19,6 +19,7 @@ import { SearchPage } from '../pages/search/search';
 import { AdminPage } from '../pages/admin/admin';
 import { HomePage } from '../pages/home/home';
 import { AdminloginPage } from '../pages/adminlogin/adminlogin';
+import { MasakanPage } from '../pages/masakan/masakan';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
@@ -50,7 +51,7 @@ export class ConferenceApp {
     //{ title: 'About', component: TabsPage, tabComponent: AboutPage, index: 3, icon: 'information-circle' }
   ];
   loggedInPages: PageInterface[] = [
-    { title: 'Akaun Pengguna', component: AccountPage, icon: 'person' },
+    //{ title: 'Akaun Pengguna', component: AccountPage, icon: 'person' },
     { title: 'Cari Resipi', component: SearchPage, icon: 'search' },
     //{ title: 'Support', component: SupportPage, icon: 'help' },
     { title: 'Log Keluar', component: TabsPage, icon: 'log-out', logsOut: true }

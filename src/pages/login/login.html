@@ -23,7 +23,7 @@
 					required>
 				</ion-input>
 			</ion-item>
-			<p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
+			<p ion-text [hidden]="username.valid || submitted == true" color="danger" padding-left>
 				*Nama pengguna perlu dimasukkan
 			</p>
 
@@ -32,7 +32,7 @@
 				<ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" required>
 				</ion-input>
 			</ion-item>
-			<p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
+			<p ion-text [hidden]="password.valid || submitted == true" color="danger" padding-left>
 				*Kata laluan perlu dimasukkan
 			</p>
 		</ion-list>
