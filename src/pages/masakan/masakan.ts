@@ -15,8 +15,12 @@ import {IngredientService} from '../../providers/ingredient-service'
 })
 export class MasakanPage {
   public namaMasakan:any;
+  public caraMasak:any;
+
   constructor(public ingredientService:IngredientService, public globalService:GlobalService, public navCtrl: NavController, public navParams: NavParams) {
    this.namaMasakan = navParams.get("name");
+   this.caraMasak = navParams.get("methods");
+
 
     console.log(navParams);
   }
