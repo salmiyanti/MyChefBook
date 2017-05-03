@@ -42,5 +42,23 @@ export class IngredientService {
     });
   }
 
+  getBahan() {
+    return Observable.create((observer:any) => {
+
+      // let headers = new Headers({'Content-Type': 'application/json'});
+      // let options = new RequestOptions({headers: headers});
+
+      this.http.get(this.globalService.backend.getBahanUrl /*, requestData */ /*, options*/)
+        .subscribe((responseData:any) => {
+          observer.next(responseData.json());
+          observer.complete();
+        }, (error:any) => {
+          observer.next(error);
+          observer.complete();
+          console.log(error);
+        });
+    });
+  }
+
 
 }

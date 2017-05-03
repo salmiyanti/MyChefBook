@@ -20,7 +20,7 @@ export class GlobalService {
     getIngredientUrl: '/ingredient.php',
     getRecipeUrl: '/recipe.php',
     adminloginUrl: "/adminlogin.php",
-    //registerUrl: '/register.php', untuk signup
+    getBahanUrl: '/bahan.php',
 
   };
   public measurementUnit = 'Meters';
@@ -33,7 +33,7 @@ export class GlobalService {
     this.backend.adminloginUrl = this.backend.baseUrl + this.backend.adminloginUrl;
     this.backend.getIngredientUrl = this.backend.baseUrl + this.backend.getIngredientUrl;
     this.backend.getRecipeUrl = this.backend.baseUrl + this.backend.getRecipeUrl;
-    //this.backend.registerUrl = this.backend.baseUrl + this.backend.registerUrl;
+    this.backend.getBahanUrl = this.backend.baseUrl + this.backend.getBahanUrl;
   }
 
   getStorage(key:string) {
