@@ -1,0 +1,38 @@
+<!--
+  Generated template for the Bahanbaru page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <!--<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>-->
+    <ion-title>Tambah Bahan</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bahanbaru-page">
+
+  <!--<div class="logo">
+    <img src="assets/img/appicon.svg" alt="Ionic Logo">
+    <h3>Selamat Datang ke MyChefBook</h3>
+  </div>-->
+
+  <form #bahanbaruForm="ngForm" novalidate>
+    <ion-list no-lines>
+      <ion-item>
+            <ion-input [(ngModel)]="bahanbaru.name" name="name" type="text" placeholder="Bahan Baru" #name="ngModel"></ion-input>
+      </ion-item>
+      <p ion-text [hidden]="name.valid || submitted == true" color="danger" padding-left>
+      </p>
+    </ion-list>
+
+    <div padding>
+      <button ion-button (click)="onBahanbaru(bahanbaruForm)" type="submit" block>Simpan</button>
+    </div>
+  </form>
+
+</ion-content>
+

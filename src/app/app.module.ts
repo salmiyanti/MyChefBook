@@ -26,6 +26,7 @@ import { SearchPage } from '../pages/search/search';
 import { AdminPage } from '../pages/admin/admin';
 import { HomePage } from '../pages/home/home';
 import { AdminloginPage } from '../pages/adminlogin/adminlogin';
+import { BahanbaruPage } from '../pages/bahanbaru/bahanbaru';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
@@ -60,6 +61,7 @@ import {IngredientService} from "../providers/ingredient-service";
     HomePage,
     AdminloginPage,
     MasakanPage,
+    BahanbaruPage,
 
 
   ],
@@ -88,6 +90,7 @@ import {IngredientService} from "../providers/ingredient-service";
     AdminPage,
     AdminloginPage,
     MasakanPage,
+    BahanbaruPage,
     HomePage
 
   ],

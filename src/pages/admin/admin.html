@@ -17,34 +17,36 @@
 
 
 <ion-content padding>
-<h4>Tambah bahan baru</h4>
+<h4>Tambah Resipi Baru</h4>
 <ion-list>
 
   <ion-item>
-    <ion-input type="text" placeholder="Nama resepi" name="resepi"></ion-input>
+    <ion-input type="text" placeholder="Nama Resipi" name="resipi"></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-input type="text" placeholder="Bahan-bahan" name="bahan"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Toppings</ion-label>
+    <ion-item>
+    <ion-label>Bahan-bahan</ion-label>
     <ion-select  multiple="true">
       <ion-option>Bacon</ion-option>
-      <ion-option>Black Olives</ion-option>
+     <!-- <ion-option>Black Olives</ion-option>
       <ion-option>Extra Cheese</ion-option>
       <ion-option>Mushrooms</ion-option>
       <ion-option>Pepperoni</ion-option>
-      <ion-option>Sausage</ion-option>
+      <ion-option>Sausage</ion-option>-->
     </ion-select>
   </ion-item>
   <ion-item>
-    <ion-input type="text" placeholder="Cara memasak" name="cara"></ion-input>
+    <ion-input type="text" placeholder="Cara Memasak" name="cara"></ion-input>
   </ion-item>
 
   </ion-list>
 
-  <button ion-button>Simpan Resepi</button>
+  <h5>Bahan tidak tersenarai? Sila klik "Tambah Bahan"</h5>
+  <br/>
+  <!--<button ion-button>Tambah Bahan</button>-->
+  <button ion-button (click)="onAdmin()" type="submit">Tambah Bahan</button>
+
+  <button ion-button>Simpan Resipi</button>
 
 
 </ion-content>

@@ -20,6 +20,7 @@ import { AdminPage } from '../pages/admin/admin';
 import { HomePage } from '../pages/home/home';
 import { AdminloginPage } from '../pages/adminlogin/adminlogin';
 import { MasakanPage } from '../pages/masakan/masakan';
+import { BahanbaruPage } from '../pages/bahanbaru/bahanbaru';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
