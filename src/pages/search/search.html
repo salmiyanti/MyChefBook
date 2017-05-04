@@ -57,7 +57,7 @@
 
   <ion-list *ngIf="recipes.length > 0">
     <ion-item *ngFor="let item of recipes">
-      <button ion-button (click)="onMasakan(item)">{{item.name}} {{ item.id }}</button>
+      <button ion-button (click)="onMasakan(item)">{{item.name}}</button>
 
     </ion-item>
   </ion-list>

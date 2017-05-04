@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import {BahanbaruPage} from "../bahanbaru/bahanbaru";
 import {IngredientService} from '../../providers/ingredient-service'
 import {GlobalService} from "../../providers/global-service";
+import {NgForm} from "@angular/forms";
+
 
 /*
   Generated class for the Admin page.
@@ -16,29 +18,42 @@ import {GlobalService} from "../../providers/global-service";
 })
 export class AdminPage {
   submitted = true;
-  //ingredient:any = [];
+  item: {name?: string, methods?: string} = {};
+
+  bahan:any = [];
 
   constructor(public ingredientService:IngredientService, public globalService:GlobalService, public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AdminPage');
+    this.ingredientService.getBahan().subscribe((data:any) => {
+      console.log(data);
+      this.bahan = data;
+      data.forEach((bahan:any, val:any)=> {
+        console.log(bahan.name);
+      });
+
+    });
   }
   onAdmin() {
     this.submitted = true;
     this.navCtrl.push(BahanbaruPage);
       }
 
+  onSimpan(form: NgForm) {
+    this.submitted = true;
 
-  /*onPilih(b:any) {
-    //let loading = this.globalService.loading("Cari resepi...");
-    //loading.present();
+    if (form.valid) {
+      this.globalService.resepibaru(this.item).subscribe((data:any)=>{
+        alert("Resepi berjaya ditambah.");
+        this.navCtrl.push(AdminPage);
+      }, (error:any)=>{
 
-    this.ingredientService.getIngredient(b).subscribe((data:any) => {
-      console.log(data);
-      this.ingredient = data;
       });
-
-   }*/
+      /*this.userData.signup(this.signup.username);
+       this.navCtrl.push(TabsPage);*/
+    }
+  }
 
 }
       /*this.userData.signup(this.signup.username);

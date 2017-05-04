@@ -86,6 +86,31 @@ export class GlobalService {
     });
   }
 
+  resepibaru(item:any){
+    // console.log(login);
+    return Observable.create((observer:any) => {
+      // At this point make a request to your backend to make a real check!
+      var requestData = ({
+       name: item.name,
+       methods: item.methods,
+       ingredients: item.ingredients,
+        
+      });
+      // let headers = new Headers({'Content-Type': 'application/json'});
+      // let options = new RequestOptions({headers: headers});
+      this.http.post("https://mychefbook.cryptical.tech/insertresipi.php", requestData/*, options*/)
+        .subscribe((responseData:any) => {
+          console.log(responseData);
+          observer.next(responseData.json());
+          observer.complete();
+        }, (error:any) => {
+          observer.next(error);
+          observer.complete();
+          console.log(error);
+        });
+    });
+  }
+
   signup(signup:any){
   // console.log(login);
     return Observable.create((observer:any) => {

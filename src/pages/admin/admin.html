@@ -18,33 +18,32 @@
 
 <ion-content padding>
 <h4>Tambah Resipi Baru</h4>
+  <form #simpanForm="ngForm" novalidate>
 <ion-list>
 
   <ion-item>
-    <ion-input type="text" placeholder="Nama Resipi" name="resipi"></ion-input>
+    <!--<ion-input [(ngModel)]="bahanbaru.name" name="name" type="text" placeholder="Bahan Baru" #name="ngModel"></ion-input>-->
+    <ion-input [(ngModel)]="item.name" name="name" type="text" placeholder="Nama Resipi" #name="ngModel"></ion-input>
   </ion-item>
 
-  <ion-item>
-
-        <ion-label>Bahan-bahan</ion-label>
-        <ion-select  multiple="true">
-          <ion-option >test</ion-option>
-        </ion-select>
-
-  </ion-item>
+          <ion-item>
+                <ion-label>Bahan-bahan</ion-label>
+                <ion-select [(ngModel)]="item.ingredients" name="pilih" multiple="true" #name="ngModel">
+                  <ion-option *ngFor="let item of bahan" value="{{item.id}}">{{item.name}}</ion-option>
+                </ion-select>
+          </ion-item>
 
   <ion-item>
-    <ion-input type="text" placeholder="Cara Memasak" name="cara"></ion-input>
+        <ion-input [(ngModel)]="item.methods" name="methods" type="text" placeholder="Cara Memasak" #name="ngModel"></ion-input>
   </ion-item>
 
 </ion-list>
 
   <h5>Bahan tidak tersenarai? Sila klik "Tambah Bahan"</h5>
   <br/>
-  <!--<button ion-button>Tambah Bahan</button>-->
   <button ion-button (click)="onAdmin()" type="submit">Tambah Bahan</button>
 
-  <button ion-button>Simpan Resipi</button>
+  <button ion-button (click)="onSimpan(simpanForm)" type="submit">Simpan Resipi</button>
 
-
+</form>
 </ion-content>
