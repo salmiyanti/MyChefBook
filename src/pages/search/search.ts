@@ -39,15 +39,12 @@ export class SearchPage {
       data.forEach((recipe:any, val:any)=> {
         console.log(recipe.name);
       });
-
     });
-
     loading.dismiss();
   }
 
   onMasakan(item: any) {
-    
-    this.navCtrl.push(MasakanPage, item);
+        this.navCtrl.push(MasakanPage, item);
 
   }
 

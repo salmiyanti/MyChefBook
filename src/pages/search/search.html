@@ -50,11 +50,6 @@
     </ion-row>
   </form>
 
- <!--<ion-item-divider ion-item light no-lines style="font-size: 1.4rem">
-    Results
-    <ion-icon item-right name="search"></ion-icon>
-  </ion-item-divider>-->
-
   <ion-list *ngIf="recipes.length > 0">
     <ion-item *ngFor="let item of recipes">
       <button ion-button (click)="onMasakan(item)">{{item.name}}</button>

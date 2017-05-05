@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MenuController, NavController, Slides } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { TabsPage } from '../tabs/tabs';
+//import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-tutorial',
