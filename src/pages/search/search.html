@@ -21,7 +21,7 @@
       <h2>Sila Masukkan Bahan-bahan :</h2>
 
       <ion-item>
-        <ion-label stacked color="primary">Bahan pertama:</ion-label>
+        <ion-label stacked color="google">Bahan pertama:</ion-label>
         <ion-input [(ngModel)]="ingredient.first" name="first" type="text" #first="ngModel" spellcheck="false"
                    autocapitalize="on"
                    required>
@@ -29,37 +29,37 @@
       </ion-item>
 
       <ion-item>
-        <ion-label stacked color="primary">Bahan kedua:</ion-label>
+        <ion-label stacked color="google">Bahan kedua:</ion-label>
         <ion-input [(ngModel)]="ingredient.second" name="second" type="text" #second="ngModel" spellcheck="false"
                    autocapitalize="on" required>
         </ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label stacked color="primary">Bahan ketiga:</ion-label>
+      <!--<ion-item>
+        <ion-label stacked color="google">Bahan ketiga:</ion-label>
         <ion-input [(ngModel)]="ingredient.third" name="third" type="text" #third="ngModel" spellcheck="false"
                    autocapitalize="on" required>
         </ion-input>
-      </ion-item>
+      </ion-item>-->
     </ion-list>
 
     <ion-row responsive-sm>
       <ion-col>
-        <button ion-button (click)="onSearch(searchForm)" color="danger" type="submit" block>Jom Masak!</button>
+        <button ion-button (click)="onSearch(searchForm)" color="google" type="submit" block>Jom Masak!</button>
       </ion-col>
     </ion-row>
   </form>
 
   <ion-list *ngIf="recipes.length > 0">
     <ion-item *ngFor="let item of recipes">
-      <button ion-button (click)="onMasakan(item)">{{item.name}}</button>
+      <button ion-button (click)="onMasakan(item)" color="google">{{item.name}}</button>
 
     </ion-item>
   </ion-list>
 
-  <ion-list *ngIf="recipes.length < 1">
+  <!--<ion-list *ngIf="recipes.length < 1">
     <ion-item>
       Maaf. Tiada resepi.
     </ion-item>
-  </ion-list>
+  </ion-list>-->
 </ion-content>

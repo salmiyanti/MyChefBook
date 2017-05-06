@@ -17,7 +17,7 @@ export class TabsPage {
   // set the root pages for each tab
   //tab1Root: any = TutorialPage;
   tab2Root: any = LoginPage;
-  tab3Root: any = AdminloginPage;
+  //tab3Root: any = AdminloginPage;
   //tab4Root: any = AboutPage;
   mySelectedIndex: number;
 
