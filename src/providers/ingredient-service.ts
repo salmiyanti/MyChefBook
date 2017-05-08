@@ -24,7 +24,7 @@ export class IngredientService {
       var requestData = ({
         first: ingredient.first,
         second: ingredient.second,
-        third: ingredient.third,
+        //third: ingredient.third,
       });
 
       // let headers = new Headers({'Content-Type': 'application/json'});

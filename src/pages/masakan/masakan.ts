@@ -17,11 +17,13 @@ export class MasakanPage {
   public namaMasakan:any;
   public caraMasak:any;
   public bahanMasakan:any;
+  public gambar:any;
 
   constructor(public ingredientService:IngredientService, public globalService:GlobalService, public navCtrl: NavController, public navParams: NavParams) {
    this.namaMasakan = navParams.get("name");
    this.bahanMasakan = navParams.get("ing_name");
    this.caraMasak = navParams.get("methods");
+   this.gambar = navParams.get("pictures");
 
 
     console.log(navParams);

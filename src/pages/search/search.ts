@@ -16,11 +16,11 @@ import  {MasakanPage} from "../../pages/masakan/masakan";
 export class SearchPage {
 
   recipe:string;
-  ingredient:{first?:string, second?:string, };//third?:string};
+  ingredient:{first?:string, second?:string};//, third?:string};
   recipes:any = [];
 
   constructor(public ingredientService:IngredientService, public globalService:GlobalService, public navCtrl:NavController, public navParams:NavParams) {
-    this.ingredient = {first: '', second: '', third: ''};
+    this.ingredient = {first: '', second: ''};//, third: ''};
   }
 
   ionViewDidLoad() {
