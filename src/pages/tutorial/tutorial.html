@@ -1,12 +1,12 @@
 <ion-header no-border>
   <ion-navbar>
     <ion-buttons end *ngIf="showSkip">
-      <button ion-button (click)="startApp()" color="primary">Skip</button>
+      <button ion-button (click)="startApp()" color="dark">Skip</button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content no-bounce>
+<ion-content no-bounce class="masters">
   <ion-slides (ionSlideWillChange)="onSlideChangeStart($event)" pager>
 
     <ion-slide>
@@ -14,7 +14,7 @@
       <h2 class="slide-title">
         Selamat datang ke <b>MyChefBook</b>
       </h2>
-      <p>Ingin memasak hanya dengan menggunakan bahan sedia ada ?</p>
+      <p>Ingin memasak dengan menggunakan bahan sedia ada ?</p>
       <p><b>MyChefBook</b> akan membantu anda.</p>
           </ion-slide>
 
@@ -22,7 +22,7 @@
       <img src="assets/img/typing.jpg" class="slide-image"/>
       <h2 class="slide-title">MyChefBook</h2>
       <p>Anda hanya perlu <b>log masuk</b> ke dalam sistem dan <b>masukkan</b> bahan yang sedia ada di rumah anda ke dalam ruangan yang disediakan.</p>
-      
+
     </ion-slide>
 
     <!--<ion-slide>

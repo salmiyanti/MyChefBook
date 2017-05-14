@@ -24,12 +24,8 @@ export class IngredientService {
       var requestData = ({
         first: ingredient.first,
         second: ingredient.second,
-        //third: ingredient.third,
+        third: ingredient.third,
       });
-
-      // let headers = new Headers({'Content-Type': 'application/json'});
-      // let options = new RequestOptions({headers: headers});
-
       this.http.post(this.globalService.backend.getIngredientUrl, requestData/*, options*/)
         .subscribe((responseData:any) => {
           observer.next(responseData.json());

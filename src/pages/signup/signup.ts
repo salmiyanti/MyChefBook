@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
 import { NavController } from 'ionic-angular';
-
-//import { TabsPage } from '../tabs/tabs';
 import { UserData } from '../../providers/user-data';
 import {GlobalService} from "../../providers/global-service";
 import {LoginPage} from "../login/login";
@@ -15,9 +12,9 @@ import {LoginPage} from "../login/login";
 export class SignupPage {
   signup: {username?: string, password?: string} = {};
   submitted = true;
-  //users:any = [];
 
-  constructor(public navCtrl: NavController, public userData: UserData, public globalService:GlobalService) {}
+  constructor(public navCtrl: NavController, public userData: UserData,
+              public globalService:GlobalService) {}
 
   onSignup(form: NgForm) {
     this.submitted = true;
@@ -29,8 +26,6 @@ export class SignupPage {
       }, (error:any)=>{
 
       });
-      /*this.userData.signup(this.signup.username);
-       this.navCtrl.push(TabsPage);*/
-    }
+     }
   }
 }

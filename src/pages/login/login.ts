@@ -30,7 +30,7 @@ export class LoginPage {
           alert("Tahniah " + data.username + ". Log masuk berjaya. Sila klik OK.");
           //this.userData.setId(data.id);
           this.userData.login(data);
-          this.navCtrl.push(SearchPage);
+          this.navCtrl.setRoot(SearchPage);
         }else
           alert("Ralat! Sila masukkan semula data.");
        },

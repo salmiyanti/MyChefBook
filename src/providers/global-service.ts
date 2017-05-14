@@ -94,7 +94,7 @@ export class GlobalService {
        name: item.name,
        methods: item.methods,
        ingredients: item.ingredients,
-        
+
       });
       // let headers = new Headers({'Content-Type': 'application/json'});
       // let options = new RequestOptions({headers: headers});
@@ -112,17 +112,15 @@ export class GlobalService {
   }
 
   signup(signup:any){
-  // console.log(login);
+
     return Observable.create((observer:any) => {
       // At this point make a request to your backend to make a real check!
       var requestData = ({
         username: signup.username,
         password: signup.password,
-        //email: "yanti@email.com",
-      });
-    // let headers = new Headers({'Content-Type': 'application/json'});
-    // let options = new RequestOptions({headers: headers});
-      this.http.post("https://mychefbook.cryptical.tech/register.php", requestData/*, options*/)
+       });
+      this.http.post("https://mychefbook.cryptical.tech/register.php",
+        requestData)
         .subscribe((responseData:any) => {
           console.log(responseData);
           observer.next(responseData.json());
@@ -143,8 +141,7 @@ export class GlobalService {
       username: login.username,
       password: login.password,
     });
-    // let headers = new Headers({'Content-Type': 'application/json'});
-    // let options = new RequestOptions({headers: headers});
+
     this.http.post("https://mychefbook.cryptical.tech/login.php", requestData/*, options*/)
       .subscribe((responseData:any) => {
         console.log(responseData);
